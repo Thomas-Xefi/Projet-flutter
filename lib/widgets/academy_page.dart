@@ -11,8 +11,46 @@ class AcademyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Bonjour'),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(
+                "https://cache.marieclaire.fr/data/photo/w1200_h630_c17/5v/apprendre-geographie-enfants.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Column(
+          children: [
+            Padding(padding: EdgeInsets.only(bottom: 100)),
+            Text(
+                style: TextStyle(
+                  fontSize: 100,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.lightGreenAccent,
+                  fontStyle: FontStyle.italic,
+                ),
+                'GEOQUIZZ'),
+            Padding(padding: EdgeInsets.only(bottom: 300)),
+            Container(
+              decoration: BoxDecoration(),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  primary: Colors.white,
+                  side: BorderSide(
+                      color: Colors.lightGreenAccent, width: 2), //<-- SEE HERE
+                ),
+                onPressed: () {},
+                child: const Text(
+                  'JOUER MAINTENANT !',
+                  style: TextStyle(fontSize: 40, fontStyle: FontStyle.italic),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
