@@ -12,7 +12,23 @@ class PageQuizView extends GetView<GetxPageQuizController> {
     return Scaffold(
       body: controller.obx(
         (state) => Container(
-          child: const Text('Page chargée'),
+          child: Column(
+            children: [
+              Column(
+                children: List.generate(
+                  controller.listCountry.length,
+                  (country) {
+                    return Text(
+                      "Nom du pays : ${controller.listCountry[country].name} Capital : ${controller.listCountry[country].capital ?? 'Pas de capital'}",
+                      style: const TextStyle(
+                        fontSize: 18,
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

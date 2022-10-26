@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           name: '/quiz/page',
           page: () => const PageQuizView(),
           binding: PageQuizBindings(),
-        )
+        ),
       ],
       initialRoute: '/quiz/page',
     );
