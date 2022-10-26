@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get.dart';
+import 'package:monapp/ui/view/page_quiz_view.dart';
 import 'package:monapp/widgets/home_page_view.dart';
 import 'package:monapp/widgets/second_page.dart';
+import 'package:monapp/widgets/page_quiz_bindings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +27,9 @@ class MyApp extends StatelessWidget {
           page: () => const HomePageView(),
         ),
         GetPage(
-          name: '/test',
-          page: () => const SecondPage(),
+          name: '/quiz/page',
+          page: () => const PageQuizView(),
+          binding: PageQuizBindings(),
         ),
       ],
       initialRoute: ('/home'),
