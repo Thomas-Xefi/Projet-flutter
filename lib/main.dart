@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:monapp/widgets/academy_page.dart';
+import 'package:get/get.dart';
+import 'package:monapp/widgets/home_page_view.dart';
+import 'package:monapp/widgets/second_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +12,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const AcademyPage(),
+      getPages: [
+        GetPage(
+          name: '/home',
+          page: () => const HomePageView(),
+        ),
+        GetPage(
+          name: '/test',
+          page: () => const SecondPage(),
+        ),
+      ],
+      initialRoute: ('/home'),
     );
   }
 }
