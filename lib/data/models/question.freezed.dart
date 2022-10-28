@@ -22,7 +22,7 @@ Question _$QuestionFromJson(Map<String, dynamic> json) {
 mixin _$Question {
   String get question => throw _privateConstructorUsedError;
   String get answer => throw _privateConstructorUsedError;
-  List<String> get choices => throw _privateConstructorUsedError;
+  List<String?> get choices => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $QuestionCopyWith<$Res> {
   factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
       _$QuestionCopyWithImpl<$Res, Question>;
   @useResult
-  $Res call({String question, String answer, List<String> choices});
+  $Res call({String question, String answer, List<String?> choices});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
       choices: null == choices
           ? _value.choices
           : choices // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>,
     ) as $Val);
   }
 }
@@ -79,7 +79,7 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       __$$_QuestionCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String question, String answer, List<String> choices});
+  $Res call({String question, String answer, List<String?> choices});
 }
 
 /// @nodoc
@@ -109,7 +109,7 @@ class __$$_QuestionCopyWithImpl<$Res>
       null == choices
           ? _value._choices
           : choices // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String?>,
     ));
   }
 }
@@ -117,7 +117,7 @@ class __$$_QuestionCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Question implements _Question {
-  _$_Question(this.question, this.answer, final List<String> choices)
+  _$_Question(this.question, this.answer, final List<String?> choices)
       : _choices = choices;
 
   factory _$_Question.fromJson(Map<String, dynamic> json) =>
@@ -127,9 +127,9 @@ class _$_Question implements _Question {
   final String question;
   @override
   final String answer;
-  final List<String> _choices;
+  final List<String?> _choices;
   @override
-  List<String> get choices {
+  List<String?> get choices {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_choices);
   }
@@ -171,7 +171,7 @@ class _$_Question implements _Question {
 
 abstract class _Question implements Question {
   factory _Question(final String question, final String answer,
-      final List<String> choices) = _$_Question;
+      final List<String?> choices) = _$_Question;
 
   factory _Question.fromJson(Map<String, dynamic> json) = _$_Question.fromJson;
 
@@ -180,7 +180,7 @@ abstract class _Question implements Question {
   @override
   String get answer;
   @override
-  List<String> get choices;
+  List<String?> get choices;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionCopyWith<_$_Question> get copyWith =>

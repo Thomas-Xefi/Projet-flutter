@@ -9,7 +9,7 @@ part of 'question.dart';
 _$_Question _$$_QuestionFromJson(Map<String, dynamic> json) => _$_Question(
       json['question'] as String,
       json['answer'] as String,
-      (json['choices'] as List<dynamic>).map((e) => e as String).toList(),
+      (json['choices'] as List<dynamic>).map((e) => e as String?).toList(),
     );
 
 Map<String, dynamic> _$$_QuestionToJson(_$_Question instance) =>
