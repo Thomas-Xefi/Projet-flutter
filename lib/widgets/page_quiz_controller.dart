@@ -10,6 +10,7 @@ class GetxPageQuizController extends GetxController with StateMixin {
   late List<Country> listCountry;
   List<Question> listQuestion = [];
   late Rx<Question> currentQuestion;
+  Rx<String> isCorrect = "".obs;
 
   GetxPageQuizController({required this.countryRepository});
 
@@ -20,19 +21,20 @@ class GetxPageQuizController extends GetxController with StateMixin {
     listCountry.shuffle();
     listCountry.take(5).forEach(
       (country) {
-        listCountry.shuffle();
+        List<String?> answers = listCountry
+            .where((element) => element.name != country.name)
+            .take(3)
+            .map(
+          (e) {
+            return e.capital;
+          },
+        ).toList();
+        answers.add(country.capital);
+        answers.shuffle();
         Question question = Question(
-          "Quelle est la capital de ce pays : ${country.name}",
-          "${country.capital}",
-          listCountry
-              .where((element) => element.name != country.name)
-              .take(5)
-              .map(
-            (e) {
-              return e.capital;
-            },
-          ).toList(),
-        );
+            "Quelle est la capital de ce pays : ${country.name}",
+            country.capital!,
+            answers);
         listQuestion.add(question);
       },
     );

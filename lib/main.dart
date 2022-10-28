@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/quiz/page',
-          page: () => const PageQuizView(),
+          page: () => PageQuizView(),
           binding: PageQuizBindings(),
         ),
         GetPage(

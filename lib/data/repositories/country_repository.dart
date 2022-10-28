@@ -14,12 +14,15 @@ class CountryRepository {
       List<Country> countryList = response.data
           .map<Country>((country) => Country.fromJson(country))
           .toList();
-
+      countryList = countryList
+          .where(
+            (element) => element.capital != null,
+          )
+          .toList();
       // for (Country country in countryList) {
       //   String flag = await getFlagByCountryIso(country);
       //   country = country.copyWith(flag: flag);
       // }
-
       return countryList;
     } catch (e) {
       throw Exception("Une erreur est survenue avec l\'api : $e");
