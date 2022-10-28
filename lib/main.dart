@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:monapp/ui/view/home_page_view.dart';
 import 'package:monapp/ui/view/page_quiz_view.dart';
 import 'package:monapp/ui/view/score_page_view.dart';
-import 'package:monapp/widgets/home_page_view.dart';
 import 'package:monapp/widgets/page_quiz_bindings.dart';
 
 void main() {
