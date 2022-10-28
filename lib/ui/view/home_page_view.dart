@@ -70,7 +70,7 @@ class HomePageView extends StatelessWidget {
                     color: Color.fromARGB(255, 0, 255, 200), width: 2),
               ),
               onPressed: () {
-                Get.toNamed('/test');
+                Get.toNamed('/quiz/page');
               },
               child: const Text(
                 'JOUER MAINTENANT !',
