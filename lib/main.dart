@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:monapp/ui/view/home_page_view.dart';
-import 'package:monapp/ui/view/page_quiz_view.dart';
+import 'package:monapp/ui/view/quiz_view.dart';
 import 'package:monapp/ui/view/score_page_view.dart';
-import 'package:monapp/widgets/page_quiz_bindings.dart';
+import 'package:monapp/ui/widgets/quiz_bindings.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,13 +27,13 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/quiz/page',
-          page: () => PageQuizView(),
-          binding: PageQuizBindings(),
+          page: () => const PageQuizView(),
+          binding: QuizBindings(),
         ),
         GetPage(
-          name: '/score',
-          page: () => const ScorePageView(),
-        ),
+            name: '/score',
+            page: () => const ScorePageView(),
+            binding: QuizBindings()),
       ],
       initialRoute: ('/home'),
     );

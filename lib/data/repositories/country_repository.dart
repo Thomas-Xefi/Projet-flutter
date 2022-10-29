@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:monapp/data/models/country.dart';
 
@@ -25,7 +23,7 @@ class CountryRepository {
       // }
       return countryList;
     } catch (e) {
-      throw Exception("Une erreur est survenue avec l\'api : $e");
+      throw Exception("Une erreur est survenue avec l'api : $e");
     }
   }
 
