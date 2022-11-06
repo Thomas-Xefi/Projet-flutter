@@ -46,15 +46,22 @@ class HomePageView extends StatelessWidget {
                     fontFamily: 'popin',
                   ),
                   child: AnimatedTextKit(
-                      isRepeatingAnimation: true,
-                      animatedTexts: [
-                        TyperAnimatedText('COUNTRIES',
-                            speed: const Duration(milliseconds: 100)),
-                        TyperAnimatedText('CAPITALS',
-                            speed: const Duration(milliseconds: 100)),
-                        TyperAnimatedText(' FLAGS',
-                            speed: const Duration(milliseconds: 100)),
-                      ]),
+                    isRepeatingAnimation: true,
+                    animatedTexts: [
+                      TyperAnimatedText(
+                        'COUNTRIES',
+                        speed: const Duration(milliseconds: 100),
+                      ),
+                      TyperAnimatedText(
+                        'CAPITALS',
+                        speed: const Duration(milliseconds: 100),
+                      ),
+                      TyperAnimatedText(
+                        'A TOI DE JOUER',
+                        speed: const Duration(milliseconds: 100),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -65,7 +72,7 @@ class HomePageView extends StatelessWidget {
                     color: Color.fromARGB(255, 0, 255, 200), width: 2),
               ),
               onPressed: () {
-                Get.toNamed('/quiz/page');
+                Get.toNamed('/quiz');
               },
               child: const Text(
                 'JOUER MAINTENANT !',

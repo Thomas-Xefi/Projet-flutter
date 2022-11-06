@@ -28,7 +28,7 @@ class GetxQuizController extends GetxController with StateMixin {
 
   void generateQuestions() {
     listCountry.shuffle();
-    listCountry.take(5).forEach(
+    listCountry.take(10).forEach(
       (country) {
         listCountry.shuffle();
         List<String?> answers = listCountry
@@ -66,7 +66,7 @@ class GetxQuizController extends GetxController with StateMixin {
 
   void changePage() {
     index.value++;
-    if (index.value == 5) {
+    if (index.value == 10) {
       Get.toNamed('/score');
     } else {
       isCorrect.value = '';

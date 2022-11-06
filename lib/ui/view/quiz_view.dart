@@ -14,8 +14,7 @@ class PageQuizView extends GetView<GetxQuizController> {
             image: DecorationImage(
               colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.5), BlendMode.dstATop),
-              image: const NetworkImage(
-                  "https://pixabay.com/get/g12c12bbeae47c7cdffe3c4225e60d3c9931943fbf5b48ee3b87ab68d6a2a7a56019100791e0a5028b08325af809130d8bf5ea356bb46858e5f1f91cd0f2ea69f451c5352dbe5b5a76473eb7c383beff4_1920.jpg"),
+              image: const AssetImage("assets/fond-quiz.jpg"),
               fit: BoxFit.cover,
             ),
           ),
@@ -115,7 +114,7 @@ class PageQuizView extends GetView<GetxQuizController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              (controller.index < 4)
+                              (controller.index < 9)
                                   ? const Text('Question suivante')
                                   : const Text('Voir votre résultat'),
                               const Spacer(),
